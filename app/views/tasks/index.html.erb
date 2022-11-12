@@ -15,7 +15,22 @@
         </tr>
     </thead>
     <tbody>
+         <% @tasks.each do |task| %>
+            <tr>
+                <td><%= task.id %></td>
+                <td><%= task.title %></td>
+                <td><%= task.start %></td>
+                <td><%= task.end %></td>
+                <td>
+                    <%= task.all_day ? "○" : ""  %>
 
+                </td>
+                <td><%= task.updated_at.to_s(:datetime_jp) %></td>
+                <td><%= link_to "確認", task %></td>
+                <td><%= link_to "編集", [:edit,task] %></td>
+                <td><%= link_to "削除", task, method: :delete, data: { confirm: "本当に削除しますか"} %></td>
+            </tr>
+        <% end %>
     </tbody>
 </table>
 

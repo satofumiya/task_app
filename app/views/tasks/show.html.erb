@@ -1,0 +1,28 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+    <tr>
+        <th>タイトル</th></th>
+        <td><%= @task.title %></td>
+    </tr>
+    <tr>
+        <th>開始日</th>
+        <td><%= @task.start %></td>
+    </tr>
+    <tr>
+        <th>終了日</th>
+        <td><%= @task.end %></td>
+    </tr>
+    <tr>
+        <th>終日</th>
+        <td><%= @task.all_day ? "○" : "ß" %></td>
+    </tr>
+    <tr>
+        <th>スケジュールメモ</th>
+        <td><%= @task.memo %></td>
+    </tr>
+</table>
+
+<%= link_to "スケジュール一覧に戻る", :tasks %>
+<%= link_to "スケジュールを編集する", ""%>
+<%= link_to "スケジュールを削除する", ""%>
