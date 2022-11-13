@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <th>終日</th>
-        <td><%= @task.all_day ? "○" : "ß" %></td>
+        <td><%= @task.all_day ? "○" : "" %></td>
     </tr>
     <tr>
         <th>スケジュールメモ</th>
@@ -23,6 +23,8 @@
     </tr>
 </table>
 
-<%= link_to "スケジュール一覧に戻る", :tasks %>
-<%= link_to "スケジュールを編集する", ""%>
-<%= link_to "スケジュールを削除する", ""%>
+<ul>
+    <li><%= link_to "スケジュール一覧に戻る", root_path %></li>
+    <li><%= link_to "スケジュールを編集する", [:edit, @task]%></li>
+    <li><%= link_to "スケジュールを削除する", @task, method: :delete, data: { confirm: "本当に削除しますか"} %></li>
+</ul>

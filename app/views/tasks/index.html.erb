@@ -1,9 +1,12 @@
-<h1>スケジュール一覧</h1>
+<h2>スケジュール一覧</h2>
+<% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+<% end %>
 
 <table>
     <thead>
         <tr>
-            <th>id<th>
+            <th>ID</th>
             <th>タイトル</th>
             <th>開始日</th>
             <th>終了日</th>
@@ -23,7 +26,6 @@
                 <td><%= task.end %></td>
                 <td>
                     <%= task.all_day ? "○" : ""  %>
-
                 </td>
                 <td><%= task.updated_at.to_s(:datetime_jp) %></td>
                 <td><%= link_to "確認", task %></td>
