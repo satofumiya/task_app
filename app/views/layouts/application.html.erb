@@ -11,6 +11,17 @@
   </head>
 
   <body>
+  <header>
+    <h1>Ruby on Rails スケジュール管理アプリ</h1>
+  </header>
     <%= yield %>
   </body>
+  <footer>
+    <h1>
+      現在の日時: <%= Date.current.strftime('%Y年 %m月 %d日') %>
+      <% if current_page?(root_path) %>
+        <%= "スケジュール合計  #{@tasks.length}" %>
+      <% end %>
+    </h1>
+  </footer>
 </html>
